@@ -47,10 +47,10 @@ const GALERI = [
 ];
 
 const ISTATISTIKLER = [
-  { deger: "2.000+", etiket: "Tamamlanan İş" },
-  { deger: "12", etiket: "Yıllık Deneyim" },
-  { deger: "%100", etiket: "Müşteri Memnuniyeti" },
-  { deger: "24sa", etiket: "Hızlı Teslimat" },
+  { etiket: "Tamamlanan İş", hedef: 2000 },
+  { etiket: "Yıllık Deneyim", hedef: 12 },
+  { etiket: "Müşteri Memnuniyeti", hedef: 100 },
+  { etiket: "Hızlı Teslimat", hedef: 24 },
 ];
 
 const TICKER_OGELER = [
@@ -72,18 +72,11 @@ const INSTAGRAM_LINKI = "https://www.instagram.com/tly_cnc_makina_sanayi_/";
 const WHATSAPP_LINKI =
   "https://wa.me/905335524280?text=Merhaba,%20web%20sitenizden%20ulaşıyorum.%20Turbo%20ve%20manifold%20revizyonu%20hakkında%20bilgi%20almak%20istiyorum.";
 
+// ─── SVG İKONLARI ─────────────────────────────────────────────────────────────
 function InstagramIkonu({ boyut = 20 }) {
   return (
-    <svg
-      width={boyut}
-      height={boyut}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.8"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg width={boyut} height={boyut} viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
       <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
       <circle cx="12" cy="12" r="4" />
       <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none" />
@@ -101,7 +94,8 @@ function WhatsAppIkonu({ boyut = 18 }) {
 
 function HaritaIkonu({ boyut = 14 }) {
   return (
-    <svg width={boyut} height={boyut} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width={boyut} height={boyut} viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
       <circle cx="12" cy="10" r="3" />
     </svg>
@@ -110,7 +104,8 @@ function HaritaIkonu({ boyut = 14 }) {
 
 function TelefonIkonu({ boyut = 14 }) {
   return (
-    <svg width={boyut} height={boyut} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width={boyut} height={boyut} viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72 2 2 0 011.99-2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 6.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z" />
     </svg>
   );
@@ -118,7 +113,8 @@ function TelefonIkonu({ boyut = 14 }) {
 
 function PostaIkonu({ boyut = 14 }) {
   return (
-    <svg width={boyut} height={boyut} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width={boyut} height={boyut} viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
       <polyline points="22,6 12,13 2,6" />
     </svg>
@@ -127,7 +123,8 @@ function PostaIkonu({ boyut = 14 }) {
 
 function SaatIkonu({ boyut = 14 }) {
   return (
-    <svg width={boyut} height={boyut} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg width={boyut} height={boyut} viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="12" r="10" />
       <polyline points="12,6 12,12 16,14" />
     </svg>
@@ -136,21 +133,112 @@ function SaatIkonu({ boyut = 14 }) {
 
 function OkIkonu({ boyut = 16 }) {
   return (
-    <svg width={boyut} height={boyut} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg width={boyut} height={boyut} viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M5 12h14M12 5l7 7-7 7" />
     </svg>
   );
 }
 
+// FIX: Emoji yerine tutarlı SVG ikonlar — Neden Biz kartları
+function KupahIkonu({ boyut = 26 }) {
+  return (
+    <svg width={boyut} height={boyut} viewBox="0 0 24 24" fill="none"
+      stroke="#FFCC00" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M6 9H4a2 2 0 000 4h2" />
+      <path d="M18 9h2a2 2 0 010 4h-2" />
+      <path d="M6 9v6a6 6 0 0012 0V9H6z" />
+      <path d="M9 22h6M12 19v3" />
+    </svg>
+  );
+}
+function DisliIkonu({ boyut = 26 }) {
+  return (
+    <svg width={boyut} height={boyut} viewBox="0 0 24 24" fill="none"
+      stroke="#FFCC00" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="3" />
+      <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+    </svg>
+  );
+}
+function SaatlikIkonu({ boyut = 26 }) {
+  return (
+    <svg width={boyut} height={boyut} viewBox="0 0 24 24" fill="none"
+      stroke="#FFCC00" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12,6 12,12 16,14" />
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2" />
+    </svg>
+  );
+}
+function BuyutecIkonu({ boyut = 26 }) {
+  return (
+    <svg width={boyut} height={boyut} viewBox="0 0 24 24" fill="none"
+      stroke="#FFCC00" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="11" cy="11" r="8" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+      <line x1="11" y1="8" x2="11" y2="14" />
+      <line x1="8" y1="11" x2="14" y2="11" />
+    </svg>
+  );
+}
+function KalkanIkonu({ boyut = 26 }) {
+  return (
+    <svg width={boyut} height={boyut} viewBox="0 0 24 24" fill="none"
+      stroke="#FFCC00" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      <polyline points="9,12 11,14 15,10" />
+    </svg>
+  );
+}
+function DestekIkonu({ boyut = 26 }) {
+  return (
+    <svg width={boyut} height={boyut} viewBox="0 0 24 24" fill="none"
+      stroke="#FFCC00" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.72 2 2 0 011.99-2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 6.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z" />
+    </svg>
+  );
+}
+
+const NEDEN_BIZ = [
+  { Ikon: KupahIkonu,   baslik: "Garanti Belgeli İşçilik", aciklama: "Tüm revizyon ve onarım işlemlerimiz garanti belgesiyle teslim edilir. Güven önce gelir." },
+  { Ikon: DisliIkonu,   baslik: "CNC Hassasiyeti",         aciklama: "Mikrometre hassasiyetinde CNC tezgâhlarımız ile her iş kusursuz toleransa göre işlenir." },
+  { Ikon: SaatlikIkonu, baslik: "Hızlı Teslimat",          aciklama: "Çoğu revizyon işi aynı gün veya 24 saat içinde tamamlanarak teslim edilir." },
+  { Ikon: BuyutecIkonu, baslik: "Dijital Balans",           aciklama: "En ileri dijital balans makinelerimizle titreşim sıfıra indirilir, turbo ömrü uzatılır." },
+  { Ikon: KalkanIkonu,  baslik: "Orijinal Parça",           aciklama: "Yalnızca orijinal ve kalite sertifikalı yedek parçalar kullanılır, ucuz malzemeye hayır." },
+  { Ikon: DestekIkonu,  baslik: "Satış Sonrası Destek",     aciklama: "İşiniz bittikten sonra da yanınızdayız. Her soru için bizi arayabilirsiniz." },
+];
+
+// FIX: Google Drive URL'lerini kararlı thumbnail formatına çevir
+function guvenliGorselUrl(url) {
+  const m = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+  return m ? `https://drive.google.com/thumbnail?id=${m[1]}&sz=w800` : url;
+}
+
+// ─── ANA BİLEŞEN ──────────────────────────────────────────────────────────────
 export default function App() {
   const [secilenGorsel, setSecilenGorsel] = useState(null);
-  const [aktifBolum, setAktifBolum] = useState("ana-sayfa");
-  const [menuAcik, setMenuAcik] = useState(false);
-  const [sayaclar, setSayaclar] = useState([0, 0, 0, 0]);
-  const [sayacBasladi, setSayacBasladi] = useState(false);
+  const [gorselHata, setGorselHata]       = useState({});       // FIX: görsel hata takibi
+  const [aktifBolum, setAktifBolum]       = useState("ana-sayfa");
+  const [menuAcik, setMenuAcik]           = useState(false);
+  const [sayaclar, setSayaclar]           = useState([0, 0, 0, 0]);
+  const [sayacBasladi, setSayacBasladi]   = useState(false);
+  const [masaustu, setMasaustu]           = useState(false);    // FIX: SSR-güvenli window
+  const [genisBant, setGenisBant]         = useState(false);    // FIX: SSR-güvenli window
   const istatRef = useRef(null);
   const imleçRef = useRef(null);
   const halkaRef = useRef(null);
+
+  // FIX: window kullanımı useEffect içinde — SSR güvenli
+  useEffect(() => {
+    const kontrol = () => {
+      setMasaustu(window.innerWidth >= 1024);
+      setGenisBant(window.innerWidth >= 400);
+    };
+    kontrol();
+    window.addEventListener("resize", kontrol);
+    return () => window.removeEventListener("resize", kontrol);
+  }, []);
 
   // Sayaç animasyonu
   useEffect(() => {
@@ -192,9 +280,9 @@ export default function App() {
     return () => obs.disconnect();
   }, []);
 
-  // Özel imleç — sadece masaüstü
+  // FIX: Özel imleç — masaustu state'e bağlı, SSR güvenli
   useEffect(() => {
-    if (window.innerWidth < 1024) return;
+    if (!masaustu) return;
     let hedefX = -200, hedefY = -200, mevcutX = -200, mevcutY = -200, raf;
     const fareHareket = (e) => { hedefX = e.clientX; hedefY = e.clientY; };
     const animate = () => {
@@ -207,7 +295,20 @@ export default function App() {
     window.addEventListener("mousemove", fareHareket);
     raf = requestAnimationFrame(animate);
     return () => { window.removeEventListener("mousemove", fareHareket); cancelAnimationFrame(raf); };
+  }, [masaustu]);
+
+  // FIX: ESC tuşuyla modal kapat
+  useEffect(() => {
+    const kapat = (e) => { if (e.key === "Escape") setSecilenGorsel(null); };
+    window.addEventListener("keydown", kapat);
+    return () => window.removeEventListener("keydown", kapat);
   }, []);
+
+  // FIX: Menü açıkken body scroll kilitleme
+  useEffect(() => {
+    document.body.style.overflow = menuAcik ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuAcik]);
 
   const sayacGoster = (i) => {
     if (i === 0) return sayaclar[0].toLocaleString("tr-TR") + "+";
@@ -228,7 +329,6 @@ export default function App() {
         ::-webkit-scrollbar-thumb { background: #FFCC00; border-radius: 2px; }
         ::selection { background: #FFCC00; color: #000; }
 
-        /* İmleç */
         .imlec-nokta {
           position: fixed; top: 0; left: 0; width: 8px; height: 8px;
           background: #FFCC00; border-radius: 50%; pointer-events: none;
@@ -242,14 +342,12 @@ export default function App() {
         }
         @media (max-width: 1023px) { .imlec-nokta, .imlec-halka { display: none; } }
 
-        /* Gürültü katmanı */
         body::after {
           content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none;
           opacity: 0.035;
           background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
         }
 
-        /* Navbar */
         .nav {
           position: fixed; top: 0; left: 0; right: 0; z-index: 500;
           display: flex; align-items: center; justify-content: space-between;
@@ -303,7 +401,6 @@ export default function App() {
         .wp-buton:hover { color: #FFCC00; }
         .wp-buton > * { position: relative; z-index: 1; }
 
-        /* Hamburger menü */
         .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; padding: 6px; cursor: pointer; }
         @media (max-width: 900px) { .hamburger { display: flex; } }
         .hamburger span { display: block; width: 24px; height: 1.5px; background: #FFCC00; transition: all 0.3s; transform-origin: center; }
@@ -311,7 +408,6 @@ export default function App() {
         .hamburger.acik span:nth-child(2) { opacity: 0; transform: scaleX(0); }
         .hamburger.acik span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-        /* Mobil menü */
         .mobil-menu {
           position: fixed; inset: 0; background: #030303; z-index: 400;
           display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px;
@@ -322,7 +418,6 @@ export default function App() {
         .mobil-menu a:hover { color: #FFCC00; }
         .mobil-menu .mobil-sosyal { display: flex; gap: 16px; margin-top: 16px; }
 
-        /* Hero */
         .hero {
           min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end;
           padding: 0 56px 88px; padding-top: 100px; position: relative; overflow: hidden;
@@ -367,8 +462,8 @@ export default function App() {
           animation: yukariGel 1s cubic-bezier(0.16,1,0.3,1) 0.25s both;
         }
         @media (max-width: 600px) { .hero-baslik { font-size: 48px; } }
-        .hero-baslik-sari { color: #FFCC00; display: block; }
-        .hero-baslik-beyaz { color: #fff; display: block; }
+        .hero-baslik-sari   { color: #FFCC00; display: block; }
+        .hero-baslik-beyaz  { color: #fff; display: block; }
         .hero-baslik-hayalet { color: rgba(255,255,255,0.05); display: block; }
 
         .hero-alt { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 28px; }
@@ -390,7 +485,6 @@ export default function App() {
         .cizgi-buton:hover { border-color: #FFCC00; color: #FFCC00; }
         @keyframes yukariGel { from { opacity:0; transform:translateY(44px); } to { opacity:1; transform:translateY(0); } }
 
-        /* Ticker */
         .ticker-dis { overflow: hidden; background: #FFCC00; flex-shrink: 0; }
         .ticker-ic { display: flex; align-items: center; animation: tikla 26s linear infinite; white-space: nowrap; width: max-content; }
         @keyframes tikla { from { transform:translateX(0); } to { transform:translateX(-50%); } }
@@ -401,7 +495,6 @@ export default function App() {
         }
         .ticker-oge::after { content: '◆'; font-size: 7px; color: rgba(0,0,0,0.3); }
 
-        /* İstatistikler */
         .istat-grid { display: grid; grid-template-columns: repeat(4,1fr); border-bottom: 1px solid #0e0e0e; }
         @media (max-width: 700px) { .istat-grid { grid-template-columns: repeat(2,1fr); } }
         .istat-kart {
@@ -420,11 +513,9 @@ export default function App() {
         .istat-sayi { font-size: clamp(36px,4vw,58px); font-weight: 900; color: #FFCC00; letter-spacing:-0.025em; line-height:1; margin-bottom:8px; font-variant-numeric: tabular-nums; }
         .istat-etiket { font-size: 9px; letter-spacing:0.28em; color:#282828; text-transform:uppercase; font-weight:700; }
 
-        /* Bölüm etiketi */
         .bolum-etiketi { display:flex; align-items:center; gap:11px; font-size:8.5px; font-weight:700; letter-spacing:0.42em; color:#FFCC00; text-transform:uppercase; margin-bottom:18px; }
         .bolum-etiketi::before { content:''; display:block; width:28px; height:1.5px; background:#FFCC00; flex-shrink:0; }
 
-        /* Hizmetler */
         .hizmet-grid { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid #0e0e0e; }
         @media (max-width: 900px) { .hizmet-grid { grid-template-columns:repeat(2,1fr); } }
         @media (max-width: 500px) { .hizmet-grid { grid-template-columns:1fr; } }
@@ -447,25 +538,23 @@ export default function App() {
         .hizmet-etiket-kucuk { display:inline-block; font-size:7.5px; font-weight:800; letter-spacing:0.3em; color:#FFCC00; text-transform:uppercase; border:1px solid rgba(255,204,0,0.25); padding:3px 10px; margin-bottom:14px; }
         .hizmet-baslik { font-size:17px; font-weight:800; color:#fff; text-transform:uppercase; letter-spacing:0.03em; margin-bottom:13px; }
         .hizmet-aciklama { font-size:12.5px; color:#383838; font-weight:300; line-height:1.9; }
-        .hizmet-alt { margin-top:30px; display:flex; align-items:center; gap:8px; font-size:8px; letter-spacing:0.3em; color:#FFCC00; text-transform:uppercase; font-weight:800; transition:gap 0.3s; }
+        .hizmet-alt { margin-top:30px; display:inline-flex; align-items:center; gap:8px; font-size:8px; letter-spacing:0.3em; color:#FFCC00; text-transform:uppercase; font-weight:800; text-decoration:none; transition:gap 0.3s; }
         .hizmet-alt::before { content:''; display:block; width:18px; height:1px; background:#FFCC00; transition:width 0.35s; }
         .hizmet-kart:hover .hizmet-alt { gap:12px; }
         .hizmet-kart:hover .hizmet-alt::before { width:28px; }
 
-        /* "Neden Biz?" bandı */
         .neden-biz { padding:80px 56px; border-bottom:1px solid #0e0e0e; background:#040404; }
         @media (max-width: 768px) { .neden-biz { padding:60px 20px; } }
         .neden-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:#0e0e0e; margin-top:56px; }
         @media (max-width: 700px) { .neden-grid { grid-template-columns:1fr; } }
         .neden-kart { background:#060606; padding:40px 32px; position:relative; overflow:hidden; transition:background 0.3s; }
         .neden-kart:hover { background:#0a0a0a; }
-        .neden-simge { font-size:28px; margin-bottom:18px; display:block; line-height:1; }
+        .neden-ikon { margin-bottom:20px; display:block; line-height:1; }
         .neden-baslik { font-size:15px; font-weight:800; color:#fff; letter-spacing:0.02em; margin-bottom:10px; }
         .neden-aciklama { font-size:12px; color:#333; font-weight:300; line-height:1.85; }
         .neden-kart::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:#FFCC00; transition:width 0.45s; }
         .neden-kart:hover::after { width:100%; }
 
-        /* Galeri */
         .galeri-bolum { padding:100px 56px; background:#030303; border-bottom:1px solid #0e0e0e; }
         @media (max-width: 768px) { .galeri-bolum { padding:70px 20px; } }
         .galeri-ust { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:56px; flex-wrap:wrap; gap:16px; }
@@ -478,15 +567,23 @@ export default function App() {
         .galeri-bindirme { position:absolute; inset:0; display:flex; align-items:flex-end; padding:16px; background:linear-gradient(to top,rgba(0,0,0,0.82) 0%,transparent 55%); opacity:0; transition:opacity 0.35s; }
         .galeri-kart:hover .galeri-bindirme { opacity:1; }
         .galeri-bindirme-yazi { font-size:8px; letter-spacing:0.3em; color:#FFCC00; font-weight:800; text-transform:uppercase; }
+        /* FIX: Galeri hata durumu için placeholder */
+        .galeri-hata { width:100%; height:100%; display:flex; align-items:center; justify-content:center; }
+        .galeri-hata svg { opacity:0.12; }
 
-        /* Modal */
         .modal-zemin { position:fixed; inset:0; background:rgba(0,0,0,0.97); z-index:800; display:flex; align-items:center; justify-content:center; padding:40px; animation:belir 0.3s ease; cursor:zoom-out; }
         @keyframes belir { from{opacity:0} to{opacity:1} }
-        .modal-kapat { position:fixed; top:24px; right:24px; width:50px; height:50px; border:1px solid #202020; background:transparent; color:#555; font-size:17px; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.3s; z-index:801; font-family:'Poppins',sans-serif; }
+        .modal-kapat {
+          position:fixed; top:24px; right:24px; width:50px; height:50px;
+          border:1px solid #202020; background:transparent; color:#555; font-size:17px;
+          display:flex; align-items:center; justify-content:center; cursor:pointer;
+          transition:all 0.3s; z-index:801; font-family:'Poppins',sans-serif;
+        }
         .modal-kapat:hover { border-color:#FFCC00; color:#FFCC00; }
+        /* FIX: Klavye odak halkası */
+        .modal-kapat:focus-visible { outline: 2px solid #FFCC00; outline-offset: 3px; }
         .modal-gorsel { max-width:90vw; max-height:86vh; object-fit:contain; border:1px solid #1a1a1a; box-shadow:0 0 0 1px #FFCC00, 0 48px 120px rgba(0,0,0,0.85); }
 
-        /* İletişim / Footer */
         .iletisim-bolum { background:#060606; border-top:1px solid #0e0e0e; }
         .iletisim-ic { max-width:1400px; margin:0 auto; padding:100px 56px 72px; display:grid; grid-template-columns:1fr 1fr; gap:96px; }
         @media (max-width: 900px) { .iletisim-ic { grid-template-columns:1fr; gap:56px; padding:70px 20px 56px; } }
@@ -505,37 +602,41 @@ export default function App() {
         .marka-yazi { font-size:clamp(52px,7vw,96px); font-weight:900; line-height:0.82; letter-spacing:-0.03em; text-transform:uppercase; }
         .marka-alt { font-size:12.5px; color:#2c2c2c; font-weight:300; line-height:1.8; margin-top:18px; max-width:280px; }
 
+        /* FIX: Google Maps — siteyle uyumlu koyu tema filtresi */
+        .harita-wrapper { margin-top:40px; overflow:hidden; border:1px solid #0f0f0f; }
+        .harita-wrapper iframe { display:block; width:100%; border:none; filter:grayscale(100%) brightness(0.3) contrast(1.2) invert(1) hue-rotate(180deg); transition:filter 0.4s; }
+        .harita-wrapper:hover iframe { filter:grayscale(60%) brightness(0.45) contrast(1.1) invert(1) hue-rotate(180deg); }
+
         .alt-bar { border-top:1px solid #0a0a0a; padding:22px 56px; max-width:1400px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
         @media (max-width: 768px) { .alt-bar { padding:18px 20px; } }
         .alt-bar-yazi { font-size:8px; letter-spacing:0.22em; color:#1c1c1c; text-transform:uppercase; font-weight:600; }
 
-        /* Scroll to top butonu */
         .yukari-btn { position:fixed; bottom:28px; right:28px; width:44px; height:44px; background:#FFCC00; border:none; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:300; transition:transform 0.3s, background 0.3s; }
         .yukari-btn:hover { transform:translateY(-3px); background:#fff; }
         @media (max-width: 768px) { .yukari-btn { bottom:20px; right:16px; width:38px; height:38px; } }
       `}</style>
 
       {/* Özel imleç */}
-      <div ref={imleçRef} className="imlec-nokta" />
-      <div ref={halkaRef} className="imlec-halka" />
+      <div ref={imleçRef} className="imlec-nokta" aria-hidden="true" />
+      <div ref={halkaRef} className="imlec-halka" aria-hidden="true" />
 
-      {/* Mobil menü */}
-      <div className={`mobil-menu ${menuAcik ? "acik" : ""}`}>
+      {/* FIX: Mobil menü — aria rolleri eklendi, body scroll kilitli */}
+      <div className={`mobil-menu ${menuAcik ? "acik" : ""}`} role="dialog" aria-modal="true" aria-label="Gezinti menüsü">
         {NAV_LINKLERI.map(({ etiket, href }) => (
           <a key={href} href={href} onClick={() => setMenuAcik(false)}>{etiket}</a>
         ))}
         <div className="mobil-sosyal">
-          <a href={INSTAGRAM_LINKI} target="_blank" rel="noopener noreferrer" className="ig-buton" title="Instagram'da Takip Et">
+          <a href={INSTAGRAM_LINKI} target="_blank" rel="noopener noreferrer" className="ig-buton" title="Instagram'da Takip Et" aria-label="Instagram">
             <InstagramIkonu boyut={20} />
           </a>
-          <a href={WHATSAPP_LINKI} target="_blank" rel="noopener noreferrer" className="wp-buton" style={{ padding: "10px 20px", fontSize: "9px" }}>
+          <a href={WHATSAPP_LINKI} target="_blank" rel="noopener noreferrer" className="wp-buton" style={{ padding: "10px 20px", fontSize: "9px" }} aria-label="WhatsApp ile iletişim">
             <WhatsAppIkonu boyut={14} /><span>WhatsApp</span>
           </a>
         </div>
       </div>
 
       {/* Nav */}
-      <nav className="nav">
+      <nav className="nav" role="navigation" aria-label="Ana gezinti">
         <a href="#ana-sayfa" className="logo">
           TLY <span className="logo-sari">CNC</span>
           <span className="logo-kucuk">Makine</span>
@@ -543,45 +644,55 @@ export default function App() {
         <ul className="nav-liste">
           {NAV_LINKLERI.map(({ etiket, href }) => (
             <li key={href}>
-              <a href={href} className={`nav-link ${aktifBolum === href.slice(1) ? "aktif" : ""}`}>{etiket}</a>
+              <a
+                href={href}
+                className={`nav-link ${aktifBolum === href.slice(1) ? "aktif" : ""}`}
+                aria-current={aktifBolum === href.slice(1) ? "page" : undefined}
+              >
+                {etiket}
+              </a>
             </li>
           ))}
         </ul>
         <div className="nav-sag">
-          <a href={INSTAGRAM_LINKI} target="_blank" rel="noopener noreferrer" className="ig-buton" title="Instagram'da Takip Et">
+          <a href={INSTAGRAM_LINKI} target="_blank" rel="noopener noreferrer" className="ig-buton" title="Instagram'da Takip Et" aria-label="Instagram">
             <InstagramIkonu boyut={18} />
           </a>
-          <a href={WHATSAPP_LINKI} target="_blank" rel="noopener noreferrer" className="wp-buton">
+          <a href={WHATSAPP_LINKI} target="_blank" rel="noopener noreferrer" className="wp-buton" aria-label="WhatsApp ile iletişim">
             <WhatsAppIkonu boyut={15} />
-            <span style={{ display: window.innerWidth < 400 ? "none" : "inline" }}>WhatsApp</span>
+            {/* FIX: window.innerWidth yerine state kullanıldı */}
+            {genisBant && <span>WhatsApp</span>}
           </a>
-          <button className={`hamburger ${menuAcik ? "acik" : ""}`} onClick={() => setMenuAcik(!menuAcik)} aria-label="Menüyü Aç">
+          <button
+            className={`hamburger ${menuAcik ? "acik" : ""}`}
+            onClick={() => setMenuAcik(!menuAcik)}
+            aria-label={menuAcik ? "Menüyü Kapat" : "Menüyü Aç"}
+            aria-expanded={menuAcik}
+          >
             <span /><span /><span />
           </button>
         </div>
       </nav>
 
       {/* Hero */}
-      <section id="ana-sayfa" className="hero">
-        <div className="hero-grid" />
-        <div className="hero-cember hero-cember-1" />
-        <div className="hero-cember hero-cember-2" />
-        <div className="hero-cember hero-cember-3" />
-
-        <div className="hero-konum">
-          <span className="nabiz" />
+      <section id="ana-sayfa" className="hero" style={{ scrollMarginTop: "80px" }}>
+        <div className="hero-grid" aria-hidden="true" />
+        <div className="hero-cember hero-cember-1" aria-hidden="true" />
+        <div className="hero-cember hero-cember-2" aria-hidden="true" />
+        <div className="hero-cember hero-cember-3" aria-hidden="true" />
+        <div className="hero-konum" aria-label="Konum ve çalışma saatleri">
+          <span className="nabiz" aria-hidden="true" />
           Gaziantep / Şehitkamil
-          <span style={{ margin: "0 6px", color: "#222" }}>—</span>
+          <span style={{ margin: "0 6px", color: "#222" }} aria-hidden="true">—</span>
           08:30–18:30
         </div>
-
         <div className="hero-ic">
           <p className="ust-etiket">Profesyonel CNC Turbo Merkezi</p>
           <h1 className="hero-baslik">
             <span className="hero-baslik-beyaz">Garantili</span>
             <span className="hero-baslik-sari">Turbo &amp;</span>
             <span className="hero-baslik-beyaz">Manifold</span>
-            <span className="hero-baslik-hayalet">Revizyonu</span>
+            <span className="hero-baslik-hayalet" aria-hidden="true">Revizyonu</span>
           </h1>
           <div className="hero-alt">
             <p className="hero-aciklama">
@@ -602,7 +713,7 @@ export default function App() {
       </section>
 
       {/* Ticker */}
-      <div className="ticker-dis">
+      <div className="ticker-dis" aria-hidden="true">
         <div className="ticker-ic">
           {[...TICKER_OGELER, ...TICKER_OGELER].map((oge, i) => (
             <span key={i} className="ticker-oge">{oge}</span>
@@ -611,9 +722,9 @@ export default function App() {
       </div>
 
       {/* İstatistikler */}
-      <div className="istat-grid" ref={istatRef}>
+      <div className="istat-grid" ref={istatRef} role="list" aria-label="Firma istatistikleri">
         {ISTATISTIKLER.map(({ etiket }, i) => (
-          <div key={i} className="istat-kart">
+          <div key={i} className="istat-kart" role="listitem">
             <div className="istat-sayi">{sayacGoster(i)}</div>
             <div className="istat-etiket">{etiket}</div>
           </div>
@@ -631,17 +742,21 @@ export default function App() {
         <div className="hizmet-grid">
           {HIZMETLER.map((h, i) => (
             <div key={i} className="hizmet-kart">
-              <div className="hizmet-no">{h.no}</div>
+              <div className="hizmet-no" aria-hidden="true">{h.no}</div>
               <span className="hizmet-etiket-kucuk">{h.etiket}</span>
               <h3 className="hizmet-baslik">{h.baslik}</h3>
               <p className="hizmet-aciklama">{h.aciklama}</p>
-              <div className="hizmet-alt">Fiyat Al</div>
+              {/* FIX: div yerine gerçek <a> linki — tıklanabilir, semantik */}
+              <a href={WHATSAPP_LINKI} target="_blank" rel="noopener noreferrer"
+                className="hizmet-alt" aria-label={`${h.baslik} için fiyat al`}>
+                Fiyat Al
+              </a>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Neden Biz */}
+      {/* Neden Biz — FIX: emoji → SVG ikon */}
       <div className="neden-biz">
         <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
           <div className="bolum-etiketi">Farkımız</div>
@@ -649,18 +764,11 @@ export default function App() {
             Neden <span style={{ color: "#FFCC00" }}>Bizi</span> Seçmelisiniz?
           </h2>
           <div className="neden-grid">
-            {[
-              { simge: "🏆", baslik: "Garanti Belgeli İşçilik", aciklama: "Tüm revizyon ve onarım işlemlerimiz garanti belgesiyle teslim edilir. Güven önce gelir." },
-              { simge: "⚙️", baslik: "CNC Hassasiyeti", aciklama: "Mikrometre hassasiyetinde CNC tezgâhlarımız ile her iş kusursuz tolaransa göre işlenir." },
-              { simge: "⚡", baslik: "Hızlı Teslimat", aciklama: "Çoğu revizyon işi aynı gün veya 24 saat içinde tamamlanarak teslim edilir." },
-              { simge: "🔬", baslik: "Dijital Balans", aciklama: "En ileri dijital balans makinelerimizle titreşim sıfıra indirilir, turbo ömrü uzatılır." },
-              { simge: "🛡️", baslik: "Orijinal Parça", aciklama: "Yalnızca orijinal ve kalite sertifikalı yedek parçalar kullanılır, ucuz malzemeye hayır." },
-              { simge: "📞", baslik: "Satış Sonrası Destek", aciklama: "İşiniz bittikten sonra da yanınızdayız. Her soru için bizi arayabilirsiniz." },
-            ].map((m, i) => (
+            {NEDEN_BIZ.map(({ Ikon, baslik, aciklama }, i) => (
               <div key={i} className="neden-kart">
-                <span className="neden-simge">{m.simge}</span>
-                <div className="neden-baslik">{m.baslik}</div>
-                <p className="neden-aciklama">{m.aciklama}</p>
+                <span className="neden-ikon" aria-hidden="true"><Ikon boyut={28} /></span>
+                <div className="neden-baslik">{baslik}</div>
+                <p className="neden-aciklama">{aciklama}</p>
               </div>
             ))}
           </div>
@@ -685,21 +793,52 @@ export default function App() {
                 style={{ display: "inline-flex", alignItems: "center", gap: "8px", textDecoration: "none", color: "#444", fontSize: "9px", letterSpacing: "0.2em", fontWeight: 700, textTransform: "uppercase", transition: "color 0.3s" }}
                 onMouseEnter={e => e.currentTarget.style.color = "#FFCC00"}
                 onMouseLeave={e => e.currentTarget.style.color = "#444"}
-              >
+                aria-label="Instagram sayfamıza gidin">
                 <InstagramIkonu boyut={14} />
                 <span>Daha Fazlası İçin Instagram</span>
               </a>
             </div>
           </div>
+
+          {/* FIX: URL dönüşümü + hata yönetimi + ilk görsel eager + klavye erişimi */}
           <div className="galeri-grid">
-            {GALERI.map((gorsel, i) => (
-              <div key={i} className="galeri-kart" onClick={() => setSecilenGorsel(gorsel)}>
-                <img src={gorsel} alt={`CNC İşlem ${i + 1}`} loading="lazy" />
-                <div className="galeri-bindirme">
-                  <span className="galeri-bindirme-yazi">Büyüt</span>
+            {GALERI.map((gorsel, i) => {
+              const url = guvenliGorselUrl(gorsel);
+              const hata = gorselHata[i];
+              return (
+                <div
+                  key={i}
+                  className="galeri-kart"
+                  onClick={() => !hata && setSecilenGorsel(url)}
+                  tabIndex={hata ? -1 : 0}
+                  role="button"
+                  aria-label={`Çalışma görseli ${i + 1}${hata ? " (yüklenemedi)" : ""}`}
+                  onKeyDown={e => { if ((e.key === "Enter" || e.key === " ") && !hata) setSecilenGorsel(url); }}
+                >
+                  {hata ? (
+                    <div className="galeri-hata">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFCC00" strokeWidth="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <path d="M9 9l6 6M15 9l-6 6" />
+                      </svg>
+                    </div>
+                  ) : (
+                    <>
+                      {/* FIX: ilk görsel eager, gerisi lazy */}
+                      <img
+                        src={url}
+                        alt={`TLY CNC işçilik örneği ${i + 1}`}
+                        loading={i === 0 ? "eager" : "lazy"}
+                        onError={() => setGorselHata(prev => ({ ...prev, [i]: true }))}
+                      />
+                      <div className="galeri-bindirme" aria-hidden="true">
+                        <span className="galeri-bindirme-yazi">Büyüt</span>
+                      </div>
+                    </>
+                  )}
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -707,7 +846,6 @@ export default function App() {
       {/* İletişim + Footer */}
       <footer id="iletisim" className="iletisim-bolum" style={{ scrollMarginTop: "80px" }}>
         <div className="iletisim-ic">
-          {/* Sol kolon */}
           <div>
             <div className="bolum-etiketi">Bize Ulaşın</div>
             <h2 style={{ fontSize: "clamp(38px,5vw,66px)", fontWeight: 900, letterSpacing: "-0.03em", textTransform: "uppercase", lineHeight: 0.88, margin: "0 0 48px" }}>
@@ -723,7 +861,6 @@ export default function App() {
                 <div className="iletisim-deger">Küsget Küçük Sanayi Sitesi No:28<br />27110 Şehitkamil / Gaziantep</div>
               </div>
             </a>
-
             <a href="tel:+905335524280" className="iletisim-satiri">
               <div className="iletisim-ikon"><TelefonIkonu /></div>
               <div>
@@ -731,7 +868,6 @@ export default function App() {
                 <div className="iletisim-deger">+90 533 552 42 80</div>
               </div>
             </a>
-
             <a href="mailto:info@tlycncmakine.com" className="iletisim-satiri">
               <div className="iletisim-ikon"><PostaIkonu /></div>
               <div>
@@ -739,7 +875,6 @@ export default function App() {
                 <div className="iletisim-deger">info@tlycncmakine.com</div>
               </div>
             </a>
-
             <div className="iletisim-satiri" style={{ cursor: "default" }}>
               <div className="iletisim-ikon"><SaatIkonu /></div>
               <div>
@@ -747,7 +882,6 @@ export default function App() {
                 <div className="iletisim-deger">Pazartesi — Cumartesi<br />08:30 — 18:30</div>
               </div>
             </div>
-
             <a href={INSTAGRAM_LINKI} target="_blank" rel="noopener noreferrer" className="iletisim-satiri">
               <div className="iletisim-ikon"><InstagramIkonu boyut={14} /></div>
               <div>
@@ -755,9 +889,21 @@ export default function App() {
                 <div className="iletisim-deger">@tly_cnc_makina_sanayi_</div>
               </div>
             </a>
+
+            {/* FIX: Google Maps embed — koyu tema filtresiyle */}
+            <div className="harita-wrapper" aria-label="TLY CNC Makine konumu">
+              <iframe
+                title="TLY CNC Makine Konumu"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3186.282!2d37.3460!3d37.0655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1531e614efc9b7b3%3A0x0!2zS8O8c2dldCBLw7zDp8O8ayBTYW5heWkgU2l0ZXNpLCBHYXppYW50ZXA!5e0!3m2!1str!2str!4v1234567890"
+                width="100%"
+                height="200"
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
           </div>
 
-          {/* Sağ kolon */}
           <div className="marka-kutusu">
             <div>
               <div className="marka-yazi">
@@ -784,16 +930,15 @@ export default function App() {
         </div>
       </footer>
 
-      {/* Yukarı çık butonu */}
-      <button className="yukari-btn" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Yukarı çık">
+      <button className="yukari-btn" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Sayfanın başına dön">
         <OkIkonu boyut={18} />
       </button>
 
-      {/* Galeri Modalı */}
+      {/* Galeri Modalı — FIX: ESC, autoFocus, aria */}
       {secilenGorsel && (
-        <div className="modal-zemin" onClick={() => setSecilenGorsel(null)}>
-          <button className="modal-kapat" onClick={() => setSecilenGorsel(null)}>✕</button>
-          <img src={secilenGorsel} alt="Büyütülmüş Görsel" className="modal-gorsel" onClick={e => e.stopPropagation()} />
+        <div className="modal-zemin" onClick={() => setSecilenGorsel(null)} role="dialog" aria-modal="true" aria-label="Büyütülmüş görsel">
+          <button className="modal-kapat" onClick={() => setSecilenGorsel(null)} aria-label="Görseli kapat" autoFocus>✕</button>
+          <img src={secilenGorsel} alt="Büyütülmüş çalışma görseli" className="modal-gorsel" onClick={e => e.stopPropagation()} />
         </div>
       )}
     </div>
